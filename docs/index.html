@@ -16,51 +16,175 @@
     <link rel="icon" type="image/png" href="/favicon.png" sizes="96x96"/>
     <link rel="shortcut icon" href="/favicon.ico"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --secondary-bg: #fdfdfd;
+            --text: #1a1a1a;
+            --muted: #666666;
+            --accent: #2563eb;
+            --border: #eeeeee;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            max-width: 650px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--text);
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 400;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.5s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.7s;
+        }
+
+        .delay-5 {
+            animation-delay: 0.7s;
+        }
+    </style>
 </head>
 <body>
-<h1>Roman Rakhman</h1>
-<p>Senior Fullstack Engineer | JavaScript & TypeScript Expert | 20+ Years of Experience</p>
+<div class="wrapper">
+    <header class="animate delay-1">
+        <h1>Roman Rakhman</h1>
+        <p class="muted">Senior Fullstack Engineer | JavaScript & TypeScript Expert | 20+ Years of Experience</p>
+    </header>
 
-<h2>Summary</h2>
-<p>Senior Fullstack Engineer with over 20 years of experience, with a primary focus on modern Frontend development and
-   high-performance UI architecture. Expert in building scalable web ecosystems using React 19 and Vue 3, I specialize
-   in creating seamless user experiences by bridging the gap between sophisticated backend infrastructures and intuitive
-   interfaces.</p>
-<p>My expertise includes architecting unified API strategies with GraphQL (Apollo Federation), orchestrating
-   mission-critical workflows with Temporal.io, and implementing robust state management patterns using TanStack Query.
-   I have a deep background in multi-tenant architecture and e-commerce systems, with a proven track record of
-   modernizing legacy platforms, and leading technical evolutions that deliver immediate business value.</p>
+    <section class="animate delay-2">
+        <h2>Summary</h2>
+        <p>Senior Fullstack Engineer with over 20 years of experience, with a
+            <strong>primary focus on modern Frontend development</strong>
+           and high-performance UI architecture. Expert in building scalable web ecosystems using
+            <strong>React 19</strong> and <strong>Vue 3</strong>, I specialize in creating seamless user experiences by
+           bridging the gap between sophisticated backend infrastructures and
+           intuitive interfaces.</p>
+        <p>My expertise includes architecting unified API strategies with <strong>GraphQL (Apollo Federation)</strong>,
+           orchestrating mission-critical workflows with <strong>Temporal.io</strong>, and implementing robust state
+           management patterns using <strong>TanStack Query</strong>. I have a deep background in
+            <strong>multi-tenant architecture</strong> and<strong>e-commerce systems</strong>, with a proven track
+           record of modernizing legacy platforms and leading technical evolutions that deliver immediate business
+           value.</p>
+    </section>
 
-<h2>Technical Expertise</h2>
-<p>Frontend: JavaScript (ESNext), TypeScript, Vue 3 (Composition API), React 19, Next.js, Vite, Tailwind CSS, PWA, Web
-   Accessibility (A11y).</p>
-<p>State Management: GraphQL (Apollo Federation), TanStack Query, Pinia.</p>
-<p>Backend: Node.js, NestJS, Express.js, RESTful APIs, Serverless (AWS Lambda / GCP Functions), Puppeteer (Automation),
-   WebSockets.</p>
-<p>Databases: PostgreSQL, MongoDB, Redis, Prisma ORM.</p>
-<p>Testing & Quality: Jest, Vitest, Cypress, Playwright, ESLint/Prettier, CI/CD (GitHub Actions).</p>
-<p>Cloud & DevOps: Google Cloud Platform (GCP), AWS, Docker, Kubernetes (K8s), Kafka, Monitoring (Prometheus,
-   Grafana).</p>
-<p>Workflow & Architecture: Temporal.io (Workflow Orchestration), System Design, Microservices, Agile/Scrum.</p>
+    <section class="animate delay-3">
+        <h2>Technical Expertise</h2>
+        <p><strong>Frontend:</strong>
+            JavaScript (ESNext), TypeScript, Vue 3 (Composition API), React 19, Next.js, Vite, Tailwind CSS, PWA,
+            Web Accessibility (A11y).</p>
+        <p><strong>State Management:</strong> GraphQL (Apollo Federation), TanStack Query, Pinia.</p>
+        <p><strong>Backend:</strong>
+            Node.js, NestJS, Express.js, RESTful APIs, Serverless (AWS Lambda / GCP Functions), Puppeteer (Automation),
+            WebSockets.</p>
+        <p><strong>Databases:</strong> PostgreSQL, MongoDB, Redis, Prisma ORM.</p>
+        <p><strong>Testing & Quality:</strong>
+            Jest, Vitest, Cypress, Playwright, ESLint/Prettier, CI/CD (GitHub Actions).</p>
+        <p><strong>Cloud & DevOps:</strong>
+            Google Cloud Platform (GCP), AWS, Docker, Kubernetes (K8s), Kafka, Monitoring (Prometheus, Grafana).</p>
+        <p><strong>Workflow & Architecture:</strong>
+            Temporal.io (Workflow Orchestration), System Design, Microservices, Agile/Scrum.</p>
+    </section>
 
-<h2>Key Achievements</h2>
-<p>Microservices Orchestration & Architecture: Designed and implemented a unified API Gateway using Apollo Federation,
-   successfully consolidating 25+ microservices into a scalable Supergraph for a major fundraising platform.</p>
-<p>Next-Gen Frontend Architecture: Spearheaded the transition of complex internal systems to a high-performance stack
-   (React 19, Vue 3, Tailwind CSS), implementing advanced data-fetching patterns with TanStack Query to enhance UI
-   responsiveness and developer velocity.</p>
-<p>Enterprise White Label Solutions: Architected and launched a global dating engine supporting thousands of concurrent
-   domains and millions of users; improved mobile conversion rates by implementing PWA and optimizing frontend
-   performance.</p>
-<p>Scalable High-Load Systems: Built a real-time ads-on-demand platform from the ground up using Node.js and OpenRTB
-   protocol, implementing a robust monitoring stack (Prometheus/Grafana) that ensured 99.9% uptime during peak
-   traffic.</p>
+    <section class="animate delay-4">
+        <h2>Key Achievements</h2>
+        <p>Microservices Orchestration & Architecture: Designed and implemented a unified API Gateway using
+            <strong>Apollo Federation</strong>, successfully consolidating <strong>25+ microservices</strong> into a
+           scalable Supergraph for a major fundraising platform.</p>
+        <p>Next-Gen Frontend Architecture: Spearheaded the transition of complex internal systems to a high-performance
+           stack (<strong>React 19</strong>, <strong>Vue 3</strong>, <strong>Tailwind CSS</strong>), implementing
+           advanced data-fetching patterns with <strong>TanStack Query</strong> to enhance UI responsiveness and
+           developer velocity.</p>
+        <p>Enterprise White Label Solutions: Architected and launched a global dating engine supporting
+            <strong>thousands of concurrent domains</strong> and millions of users; improved mobile conversion rates by
+           implementing <strong>PWA</strong> and optimizing frontend performance.</p>
+        <p>Scalable High-Load Systems: Built a real-time <strong>ads-on-demand platform</strong> from the ground up
+           using <strong>Node.js</strong> and <strong>OpenRTB</strong> protocol, implementing a robust monitoring stack
+           (Prometheus/Grafana) that ensured 99.9% uptime during peak traffic.</p>
+    </section>
 
-<h2>Links</h2>
-<ul>
-    <li><a href="https://www.linkedin.com/in/romanrakhman" target="_blank">linkedin.com</a></li>
-    <li><a href="https://www.codewars.com/users/rahmanroman" target="_blank">codewars.com</a></li>
-    <li><a href="https://github.com/rahmanroman" target="_blank">github.com</a></li>
-</ul>
+    <section class="animate delay-5">
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/romanrakhman" target="_blank">linkedin.com</a></li>
+            <li><a href="https://www.codewars.com/users/rahmanroman" target="_blank">codewars.com</a></li>
+            <li><a href="https://github.com/rahmanroman" target="_blank">github.com</a></li>
+        </ul>
+    </section>
+</div>
 </body>
 </html>
