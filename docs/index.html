@@ -28,13 +28,22 @@
             --border: #eeeeee;
         }
 
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+            list-style: none;
+        }
+
         body {
-            font-family: "Roboto", sans-serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            font: normal 1rem/1.5 Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
         .wrapper {
@@ -43,23 +52,28 @@
             padding: 0 20px;
         }
 
+        section {
+            margin-bottom: 2rem;
+        }
+
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 8px;
             letter-spacing: -1px;
+            margin-bottom: 0.5rem;
         }
 
         h2 {
             font-size: 1.2rem;
             font-weight: 700;
-            margin-top: 40px;
+            margin-bottom: 1.25rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         p {
             font-size: 1.1rem;
+            margin-bottom: 1.15rem;
             font-weight: 300;
             color: var(--text);
         }
@@ -117,14 +131,65 @@
         .delay-5 {
             animation-delay: 0.7s;
         }
+
+        .badge {
+            height: 20px;
+            width: auto;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .header-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+        }
+
+        .header-profile {
+            flex-grow: 1;
+        }
+
+        @media (max-width: 400px) {
+            .header-avatar {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
 <div class="wrapper">
-    <header class="animate delay-1">
-        <h1>Roman Rakhman</h1>
-        <p class="muted">Senior Fullstack Engineer | JavaScript & TypeScript Expert | 20+ Years of Experience</p>
-    </header>
+    <section class="animate delay-1">
+        <header>
+            <img src="/apple-touch-icon.png" alt="Roman Rakhman" width="120" height="120" class="header-avatar">
+            <div class="header-profile">
+                <h1>Roman Rakhman</h1>
+                <p class="muted">
+                    Senior Fullstack Engineer | JavaScript & TypeScript Expert | 20+ Years of Experience
+                </p>
+            </div>
+        </header>
+        <p>
+            <img class="badge" alt="javascript"
+                 src="https://img.shields.io/badge/javascript-F7DF1E?logo=javascript&logoColor=212121">
+            <img class="badge" alt="typescript"
+                 src="https://img.shields.io/badge/typescript-3178C6?logo=typescript&logoColor=ffffff">
+            <img class="badge" alt="react" src="https://img.shields.io/badge/react-212121?logo=react&logoColor=61DAFB">
+            <img class="badge" alt="vue" src="https://img.shields.io/badge/vue-4FC08D?logo=vuedotjs&logoColor=ffffff">
+            <img class="badge" alt="node.js"
+                 src="https://img.shields.io/badge/node.js-339933?logo=nodedotjs&logoColor=ffffff">
+            <img class="badge" alt="graphql"
+                 src="https://img.shields.io/badge/graphql-e10098?logo=graphql&logoColor=ffffff">
+            <img class="badge" alt="Docker"
+                 src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=ffffff">
+        </p>
+    </section>
 
     <section class="animate delay-2">
         <h2>Summary</h2>
