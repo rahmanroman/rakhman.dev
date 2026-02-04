@@ -47,7 +47,7 @@
         }
 
         .wrapper {
-            max-width: 650px;
+            max-width: 950px;
             margin: 2rem auto;
             padding: 0 20px;
         }
@@ -71,11 +71,22 @@
             letter-spacing: 1px;
         }
 
-        p {
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1.15rem;
+        }
+
+        p, ul {
             font-size: 1.1rem;
             margin-bottom: 1.15rem;
             font-weight: 300;
             color: var(--text);
+        }
+
+        li {
+            list-style: disc;
+            margin-left: 1.5rem;
         }
 
         .muted {
@@ -137,6 +148,16 @@
             width: auto;
         }
 
+        .star {
+            margin-bottom: 1.25rem;
+        }
+
+        .star h3,
+        .star p,
+        .star ul {
+            margin-bottom: 0.25rem;
+        }
+
         header {
             display: flex;
             align-items: center;
@@ -188,11 +209,13 @@
                  src="https://img.shields.io/badge/graphql-e10098?logo=graphql&logoColor=ffffff">
             <img class="badge" alt="Docker"
                  src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=ffffff">
+            <img class="badge" alt="Temporal.io"
+                 src="https://img.shields.io/badge/Temporal.io-141414?logo=temporal&logoColor=ffffff">
         </p>
     </section>
 
     <section class="animate delay-2">
-        <h2>Summary</h2>
+        <h2>📝 Summary</h2>
         <p>Senior Fullstack Engineer with over 20 years of experience, with a
             <strong>primary focus on modern Frontend development</strong>
            and high-performance UI architecture. Expert in building scalable web ecosystems using
@@ -208,7 +231,206 @@
     </section>
 
     <section class="animate delay-3">
-        <h2>Technical Expertise</h2>
+        <h2>⭐ Professional Achievement Stories (STAR Method)</h2>
+        <div class="star">
+            <h3>1. Custom Admin Dashboard for Multi-Tenant Management</h3>
+            <p>
+                <img class="badge" alt="typescript"
+                     src="https://img.shields.io/badge/typescript-3178C6?logo=typescript&logoColor=ffffff">
+                <img class="badge" alt="react"
+                     src="https://img.shields.io/badge/react-212121?logo=react&logoColor=61DAFB">
+            </p>
+            <p><strong>Situation:</strong>
+                After scaling the storefront creation process, owners and group leaders lacked a centralized,
+                user-friendly interface to manage their stores, track performance, and customize settings.</p>
+            <p><strong>Task:</strong>
+                Develop a comprehensive, custom Admin Dashboard from scratch to empower users with data-driven insights
+                and full control over their storefront ecosystem.</p>
+            <p><strong>Action:</strong></p>
+            <ul>
+                <li><strong>Frontend Development:</strong>
+                    Architected and built a responsive dashboard using React and TypeScript, ensuring a seamless UX for
+                    non-technical users.
+                </li>
+                <li><strong>State Management & Data Fetching:</strong>
+                    Utilized TanStack Query (React Query) for efficient server-state management, implementing
+                    sophisticated caching, optimistic updates, and background synchronization to ensure data consistency
+                    across the dashboard.
+                </li>
+                <li><strong>Data Management:</strong>
+                    Implemented complex order reporting modules with advanced filtering, detailed views, and
+                    high-performance CSV export functionality for large datasets.
+                </li>
+                <li><strong>Customization Engine:</strong>
+                    Developed a flexible settings module allowing group leaders to manage branding, store
+                    configurations, and user permissions across multiple tenants.
+                </li>
+            </ul>
+            <p><strong>Result:</strong></p>
+            <ul>
+                <li><strong>User Empowerment:</strong>
+                    Provided 100% self-service capability for store owners, significantly reducing the load on the
+                    support team.
+                </li>
+                <li><strong>Operational Efficiency:</strong>
+                    Streamlined the reporting process, enabling leaders to generate and export business-critical data in
+                    seconds.
+                </li>
+                <li><strong>Scalability:</strong>
+                    The dashboard's modular architecture allowed for the rapid addition of new features as the
+                    platform’s business requirements evolved.
+                </li>
+            </ul>
+        </div>
+
+        <div class="star">
+            <h3>2. Scaling Development with GraphQL Federation</h3>
+            <p>
+                <img class="badge" alt="typescript"
+                     src="https://img.shields.io/badge/typescript-3178C6?logo=typescript&logoColor=ffffff">
+                <img class="badge" alt="node.js"
+                     src="https://img.shields.io/badge/node.js-339933?logo=nodedotjs&logoColor=ffffff">
+                <img class="badge" alt="graphql"
+                     src="https://img.shields.io/badge/graphql-e10098?logo=graphql&logoColor=ffffff">
+            </p>
+            <p><strong>Situation:</strong>
+                The engineering department needed a way to allow multiple independent teams to work on a complex
+                microservices-based fundraising platform without creating bottlenecks in API development and
+                integration.</p>
+            <p><strong>Task:</strong>
+                Establish a unified architectural layer to orchestrate cross-team development, centralize infrastructure
+                concerns, and maintain high performance.</p>
+            <p><strong>Action:</strong></p>
+            <ul>
+                <li><strong>Architecture:</strong>
+                    Implemented Apollo Federation to transition from isolated services to a unified supergraph.
+                </li>
+                <li><strong>Tech Stack:</strong>
+                    Leveraged TypeScript, Node.js, and Prisma to build a robust, type-safe gateway and subgraphs.
+                </li>
+                <li><strong>Centralization:</strong>
+                    Integrated mission-critical middleware into the Gateway, including centralized auth, API key
+                    management, and rate limiting.
+                </li>
+            </ul>
+            <p><strong>Result:</strong></p>
+            <ul>
+                <li><strong>Scalability:</strong>
+                    Successfully expanded the ecosystem to 25+ microservices managed by different teams.
+                </li>
+                <li><strong>Efficiency:</strong>
+                    Significant boost in feature delivery speed by decoupling frontend requirements from backend
+                    deployments.
+                </li>
+                <li><strong>Performance &amp; Control:</strong>
+                    Improved overall system stability through centralized governance and optimized data fetching.
+                </li>
+            </ul>
+        </div>
+
+        <div class="star">
+            <h3>3. Migrating Complex Workflows from Workato to Temporal.io</h3>
+            <p>
+                <img class="badge" alt="typescript"
+                     src="https://img.shields.io/badge/typescript-3178C6?logo=typescript&logoColor=ffffff">
+                <img class="badge" alt="node.js"
+                     src="https://img.shields.io/badge/node.js-339933?logo=nodedotjs&logoColor=ffffff">
+                <img class="badge" alt="Temporal.io"
+                     src="https://img.shields.io/badge/Temporal.io-141414?logo=temporal&logoColor=ffffff">
+            </p>
+
+            <p><strong>Situation:</strong>
+                The core process for automated storefront creation was initially built on Workato (low-code). As the
+                platform scaled, this approach became a bottleneck due to its limited debugging capabilities, high
+                operational costs, and lack of flexibility for complex business logic.</p>
+            <p><strong>Task:</strong>
+                Replace the Workato-based flow with a custom, high-performance in-house solution capable of handling
+                complex, long-running site-generation workflows with high reliability.</p>
+            <p><strong>Action:</strong></p>
+            <ul>
+                <li><strong>Solution Design:</strong>
+                    Selected Temporal.io as the orchestration engine to manage the entire lifecycle of storefront
+                    creation.
+                </li>
+                <li><strong>Engineering:</strong>
+                    Developed durable workflows in TypeScript, replacing opaque low-code logic with maintainable,
+                    versioned, and testable code.
+                </li>
+                <li><strong>Implementation:</strong>
+                    Applied the Saga pattern to handle distributed transactions across multiple services, ensuring
+                    a consistent state even in case of partial failures.
+                </li>
+            </ul>
+            <p><strong>Result:</strong></p>
+            <ul>
+                <li><strong>Reliability:</strong>
+                    Achieved 99.9% success rate for automated site creation, with automated retries and clear visibility
+                    into execution states.
+                </li>
+                <li><strong>Efficiency:</strong>
+                    Reduced operational overhead and dependencies on third-party low-code platforms, providing full
+                    control over the execution logic.
+                </li>
+                <li><strong>Observability:</strong>
+                    Dramatically improved debugging speed by leveraging Temporal’s visibility tools, allowing the team
+                    to resolve workflow issues in minutes rather than hours.
+                </li>
+            </ul>
+        </div>
+
+        <div class="star">
+            <h3>4. Centralized Identity Provider (SSO) for Corporate Ecosystem</h3>
+            <p>
+                <img class="badge" alt="typescript"
+                     src="https://img.shields.io/badge/typescript-3178C6?logo=typescript&logoColor=ffffff">
+                <img class="badge" alt="vue"
+                     src="https://img.shields.io/badge/vue-4FC08D?logo=vuedotjs&logoColor=ffffff">
+                <img class="badge" alt="graphql"
+                     src="https://img.shields.io/badge/graphql-e10098?logo=graphql&logoColor=ffffff">
+            </p>
+
+            <p><strong>Situation:</strong>
+                The organization utilized a family of corporate products, each with its own siloed authentication logic.
+                This led to a poor user experience, duplicated user data, and significant security risks during account
+                management and offboarding.</p>
+            <p><strong>Task:</strong>
+                Design and implement a centralized Single Sign-On (SSO) service to provide a unified entry point,
+                streamlined user management, and enhanced security across all corporate applications.</p>
+            <p><strong>Action:</strong></p>
+            <ul>
+                <li><strong>Security Architecture:</strong>
+                    Developed a robust authentication system based on JWT (JSON Web Tokens) using Node.js and Prisma.
+                    Implemented secure token rotation, blacklisting, and cross-domain session handling.
+                </li>
+                <li><strong>Authorization Logic:</strong>
+                    Built a granular Role-Based Access Control (RBAC) system, allowing administrators to define precise
+                    permissions for different products within a single interface.
+                </li>
+                <li><strong>UI/UX Development:</strong>
+                    Designed and built a modern, intuitive identity portal using Vue 3, covering registration, secure
+                    login flows, and user profile management.
+                </li>
+            </ul>
+            <p><strong>Result:</strong></p>
+            <ul>
+                <li><strong>Unified Experience:</strong>
+                    Enabled seamless navigation between products with a single set of credentials, dramatically
+                    improving internal user satisfaction.
+                </li>
+                <li><strong>Security Compliance:</strong>
+                    Centralized the offboarding process, allowing security teams to revoke access to all corporate tools
+                    instantly from a single point.
+                </li>
+                <li><strong>Integration Readiness:</strong>
+                    Reduced the time required to integrate new internal products into the ecosystem by providing a
+                    standardized authentication API.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="animate delay-4">
+        <h2>🛠 Technical Expertise</h2>
         <p><strong>Frontend:</strong>
             JavaScript (ESNext), TypeScript, Vue 3 (Composition API), React 19, Next.js, Vite, Tailwind CSS, PWA,
             Web Accessibility (A11y).</p>
@@ -225,25 +447,8 @@
             Temporal.io (Workflow Orchestration), System Design, Microservices, Agile/Scrum.</p>
     </section>
 
-    <section class="animate delay-4">
-        <h2>Key Achievements</h2>
-        <p>Microservices Orchestration & Architecture: Designed and implemented a unified API Gateway using
-            <strong>Apollo Federation</strong>, successfully consolidating <strong>25+ microservices</strong> into a
-           scalable Supergraph for a major fundraising platform.</p>
-        <p>Next-Gen Frontend Architecture: Spearheaded the transition of complex internal systems to a high-performance
-           stack (<strong>React 19</strong>, <strong>Vue 3</strong>, <strong>Tailwind CSS</strong>), implementing
-           advanced data-fetching patterns with <strong>TanStack Query</strong> to enhance UI responsiveness and
-           developer velocity.</p>
-        <p>Enterprise White Label Solutions: Architected and launched a global dating engine supporting
-            <strong>thousands of concurrent domains</strong> and millions of users; improved mobile conversion rates by
-           implementing <strong>PWA</strong> and optimizing frontend performance.</p>
-        <p>Scalable High-Load Systems: Built a real-time <strong>ads-on-demand platform</strong> from the ground up
-           using <strong>Node.js</strong> and <strong>OpenRTB</strong> protocol, implementing a robust monitoring stack
-           (Prometheus/Grafana) that ensured 99.9% uptime during peak traffic.</p>
-    </section>
-
     <section class="animate delay-5">
-        <h2>Links</h2>
+        <h2>🌐 Links</h2>
         <ul>
             <li><a href="https://www.linkedin.com/in/romanrakhman" target="_blank">linkedin.com</a></li>
             <li><a href="https://www.codewars.com/users/rahmanroman" target="_blank">codewars.com</a></li>
