@@ -9,3 +9,4 @@ Senior Fullstack Engineer | JavaScript & TypeScript Expert | 20+ Years of Experi
 ![graphql](https://img.shields.io/badge/graphql-e10098?logo=graphql&logoColor=ffffff)
 ![node.js](https://img.shields.io/badge/node.js-339933?logo=nodedotjs&logoColor=ffffff)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=ffffff)
+![Temporal.io](https://img.shields.io/badge/Temporal.io-141414?logo=temporal&logoColor=ffffff)
