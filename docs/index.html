@@ -7,6 +7,8 @@
     <meta name="description"
           content="Senior Fullstack Engineer with over 20 years of experience, with a primary focus on modern Frontend development and high-performance UI architecture. Expert in building scalable web ecosystems using React 19 and Vue 3, I specialize in creating seamless user experiences by bridging the gap between sophisticated backend infrastructures and intuitive interfaces.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+
     <meta property="og:title" content="Roman Rakhman | JavaScript & TypeScript Expert | 20+ Years of Experience">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rakhman.dev/">
@@ -69,7 +71,8 @@
             font-weight: 700;
             margin-bottom: 1.25rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
         h3 {
@@ -148,8 +151,8 @@
             animation-delay: 0.7s;
         }
 
-        .delay-5 {
-            animation-delay: 0.7s;
+        .emoji {
+            font-size: 1.75rem;
         }
 
         .badge {
@@ -238,7 +241,12 @@
 <div class="wrapper">
     <section class="animate delay-1">
         <header>
-            <img src="/apple-touch-icon.png" alt="Roman Rakhman" width="120" height="120" class="header-avatar">
+            <img src="/apple-touch-icon.png"
+                 alt="Roman Rakhman"
+                 width="120"
+                 height="120"
+                 class="header-avatar"
+                 fetchpriority="high">
             <div class="header-profile">
                 <h1>Roman Rakhman</h1>
                 <p class="muted">
@@ -326,7 +334,7 @@
     </section>
 
     <section class="animate delay-2 section-main" role="main">
-        <h2>📝 Summary</h2>
+        <h2><span class="emoji">📝</span> Summary</h2>
         <p>Senior Fullstack Engineer with over 20 years of experience, with a
             <strong>primary focus on modern Frontend development</strong>
            and high-performance UI architecture. Expert in building scalable web ecosystems using
@@ -342,7 +350,7 @@
     </section>
 
     <section class="animate delay-3 section-stories">
-        <h2>⭐ Professional Achievement Stories (STAR Method)</h2>
+        <h2><span class="emoji">⭐</span> Professional Achievement Stories (STAR Method)</h2>
         <div class="star">
             <h3>1. Custom Admin Dashboard for Multi-Tenant Management</h3>
             <p>
@@ -533,7 +541,7 @@
     </section>
 
     <section class="animate delay-4 section-expertise">
-        <h2>🛠 Technical Expertise</h2>
+        <h2><span class="emoji">🛠</span> Technical Expertise</h2>
         <dl>
             <dt>Frontend:</dt>
             <dd>JavaScript (ESNext), TypeScript, Vue 3 (Composition API), React 19, Next.js, Vite, Tailwind CSS, PWA,
