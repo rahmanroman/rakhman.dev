@@ -55,14 +55,13 @@
         }
 
         section {
-            margin-bottom: 2rem;
+            margin-bottom: 2.75rem;
         }
 
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
             letter-spacing: -1px;
-            margin-bottom: 0.5rem;
         }
 
         h2 {
@@ -79,7 +78,7 @@
             margin-bottom: 1.15rem;
         }
 
-        p, ul {
+        p, ul, dl {
             font-size: 1.1rem;
             margin-bottom: 1.15rem;
             font-weight: 300;
@@ -89,6 +88,14 @@
         li {
             list-style: disc;
             margin-left: 1.5rem;
+        }
+
+        dt {
+            font-weight: 600;
+        }
+
+        dd {
+            margin-left: 1.25rem;
         }
 
         .muted {
@@ -151,13 +158,17 @@
         }
 
         .star {
-            margin-bottom: 1.25rem;
+            margin-bottom: 2rem;
         }
 
         .star h3,
         .star p,
         .star ul {
             margin-bottom: 0.25rem;
+        }
+
+        .value {
+            margin-left: 1.25rem;
         }
 
         header {
@@ -179,6 +190,43 @@
             flex-grow: 1;
         }
 
+        .header-profile p {
+            margin-bottom: 0.5rem;
+        }
+
+        .social {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .social a {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--text);
+            background-color: var(--border);
+            font-size: 0.85rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .social a:hover {
+            text-decoration: none;
+            background-color: var(--accent);
+            color: var(--bg);
+        }
+
+        .social svg {
+            width: 18px;
+            height: 18px;
+        }
+
         @media (max-width: 400px) {
             .header-avatar {
                 display: none;
@@ -196,6 +244,67 @@
                 <p class="muted">
                     Senior Fullstack Engineer | JavaScript & TypeScript Expert | 20+ Years of Experience
                 </p>
+                <nav class="social">
+                    <a href="https://www.linkedin.com/in/romanrakhman/" target="_blank" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             role="img"
+                             width="12"
+                             height="12"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             color="currentColor"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                        >
+                            <title>LinkedIn</title>
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect width="4" height="12" x="2" y="9"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/rahmanroman" target="_blank" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             role="img"
+                             width="12"
+                             height="12"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                        >
+                            <title>GitHub</title>
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.codewars.com/users/rahmanroman" target="_blank" title="CodeWars">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             role="img"
+                             width="12"
+                             height="12"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                        >
+                            <title>CodeWars</title>
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                            <path d="M4 22h16"></path>
+                            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                        </svg>
+                    </a>
+                </nav>
             </div>
         </header>
         <p>
@@ -216,7 +325,7 @@
         </p>
     </section>
 
-    <main class="animate delay-2">
+    <section class="animate delay-2 section-main" role="main">
         <h2>📝 Summary</h2>
         <p>Senior Fullstack Engineer with over 20 years of experience, with a
             <strong>primary focus on modern Frontend development</strong>
@@ -230,9 +339,9 @@
             <strong>multi-tenant architecture</strong> and <strong>e-commerce systems</strong>, with a proven track
            record of modernizing legacy platforms and leading technical evolutions that deliver immediate business
            value.</p>
-    </main>
+    </section>
 
-    <section class="animate delay-3">
+    <section class="animate delay-3 section-stories">
         <h2>⭐ Professional Achievement Stories (STAR Method)</h2>
         <div class="star">
             <h3>1. Custom Admin Dashboard for Multi-Tenant Management</h3>
@@ -242,47 +351,45 @@
                 <img class="badge" alt="react"
                      src="https://img.shields.io/badge/react-212121?logo=react&logoColor=61DAFB">
             </p>
-            <p><strong>Situation:</strong>
+            <p><strong>Situation:</strong></p>
+            <p class="value">
                 After scaling the storefront creation process, owners and group leaders lacked a centralized,
                 user-friendly interface to manage their stores, track performance, and customize settings.</p>
-            <p><strong>Task:</strong>
+            <p><strong>Task:</strong></p>
+            <p class="value">
                 Develop a comprehensive, custom Admin Dashboard from scratch to empower users with data-driven insights
                 and full control over their storefront ecosystem.</p>
             <p><strong>Action:</strong></p>
-            <ul>
-                <li><strong>Frontend Development:</strong>
-                    Architected and built a responsive dashboard using React and TypeScript, ensuring a seamless UX for
-                    non-technical users.
-                </li>
-                <li><strong>State Management & Data Fetching:</strong>
-                    Utilized TanStack Query (React Query) for efficient server-state management, implementing
-                    sophisticated caching, optimistic updates, and background synchronization to ensure data consistency
-                    across the dashboard.
-                </li>
-                <li><strong>Data Management:</strong>
-                    Implemented complex order reporting modules with advanced filtering, detailed views, and
-                    high-performance CSV export functionality for large datasets.
-                </li>
-                <li><strong>Customization Engine:</strong>
-                    Developed a flexible settings module allowing group leaders to manage branding, store
-                    configurations, and user permissions across multiple tenants.
-                </li>
-            </ul>
+            <p class="value"><strong>Frontend Development:</strong>
+                Architected and built a responsive dashboard using React and TypeScript, ensuring a seamless UX for
+                non-technical users.
+            </p>
+            <p class="value"><strong>State Management & Data Fetching:</strong>
+                Utilized TanStack Query (React Query) for efficient server-state management, implementing
+                sophisticated caching, optimistic updates, and background synchronization to ensure data consistency
+                across the dashboard.
+            </p>
+            <p class="value"><strong>Data Management:</strong>
+                Implemented complex order reporting modules with advanced filtering, detailed views, and
+                high-performance CSV export functionality for large datasets.
+            </p>
+            <p class="value"><strong>Customization Engine:</strong>
+                Developed a flexible settings module allowing group leaders to manage branding, store
+                configurations, and user permissions across multiple tenants.
+            </p>
             <p><strong>Result:</strong></p>
-            <ul>
-                <li><strong>User Empowerment:</strong>
-                    Provided 100% self-service capability for store owners, significantly reducing the load on the
-                    support team.
-                </li>
-                <li><strong>Operational Efficiency:</strong>
-                    Streamlined the reporting process, enabling leaders to generate and export business-critical data in
-                    seconds.
-                </li>
-                <li><strong>Scalability:</strong>
-                    The dashboard's modular architecture allowed for the rapid addition of new features as the
-                    platform’s business requirements evolved.
-                </li>
-            </ul>
+            <p class="value"><strong>User Empowerment:</strong>
+                Provided 100% self-service capability for store owners, significantly reducing the load on the
+                support team.
+            </p>
+            <p class="value"><strong>Operational Efficiency:</strong>
+                Streamlined the reporting process, enabling leaders to generate and export business-critical data in
+                seconds.
+            </p>
+            <p class="value"><strong>Scalability:</strong>
+                The dashboard's modular architecture allowed for the rapid addition of new features as the
+                platform’s business requirements evolved.
+            </p>
         </div>
 
         <div class="star">
@@ -295,39 +402,37 @@
                 <img class="badge" alt="graphql"
                      src="https://img.shields.io/badge/graphql-e10098?logo=graphql&logoColor=ffffff">
             </p>
-            <p><strong>Situation:</strong>
+            <p><strong>Situation:</strong></p>
+            <p class="value">
                 The engineering department needed a way to allow multiple independent teams to work on a complex
                 microservices-based fundraising platform without creating bottlenecks in API development and
                 integration.</p>
-            <p><strong>Task:</strong>
+            <p><strong>Task:</strong></p>
+            <p class="value">
                 Establish a unified architectural layer to orchestrate cross-team development, centralize infrastructure
                 concerns, and maintain high performance.</p>
             <p><strong>Action:</strong></p>
-            <ul>
-                <li><strong>Architecture:</strong>
-                    Implemented Apollo Federation to transition from isolated services to a unified supergraph.
-                </li>
-                <li><strong>Tech Stack:</strong>
-                    Leveraged TypeScript, Node.js, and Prisma to build a robust, type-safe gateway and subgraphs.
-                </li>
-                <li><strong>Centralization:</strong>
-                    Integrated mission-critical middleware into the Gateway, including centralized auth, API key
-                    management, and rate limiting.
-                </li>
-            </ul>
+            <p class="value"><strong>Architecture:</strong>
+                Implemented Apollo Federation to transition from isolated services to a unified supergraph.
+            </p>
+            <p class="value"><strong>Tech Stack:</strong>
+                Leveraged TypeScript, Node.js, and Prisma to build a robust, type-safe gateway and subgraphs.
+            </p>
+            <p class="value"><strong>Centralization:</strong>
+                Integrated mission-critical middleware into the Gateway, including centralized auth, API key
+                management, and rate limiting.
+            </p>
             <p><strong>Result:</strong></p>
-            <ul>
-                <li><strong>Scalability:</strong>
-                    Successfully expanded the ecosystem to 25+ microservices managed by different teams.
-                </li>
-                <li><strong>Efficiency:</strong>
-                    Significant boost in feature delivery speed by decoupling frontend requirements from backend
-                    deployments.
-                </li>
-                <li><strong>Performance &amp; Control:</strong>
-                    Improved overall system stability through centralized governance and optimized data fetching.
-                </li>
-            </ul>
+            <p class="value"><strong>Scalability:</strong>
+                Successfully expanded the ecosystem to 25+ microservices managed by different teams.
+            </p>
+            <p class="value"><strong>Efficiency:</strong>
+                Significant boost in feature delivery speed by decoupling frontend requirements from backend
+                deployments.
+            </p>
+            <p class="value"><strong>Performance &amp; Control:</strong>
+                Improved overall system stability through centralized governance and optimized data fetching.
+            </p>
         </div>
 
         <div class="star">
@@ -341,43 +446,41 @@
                      src="https://img.shields.io/badge/Temporal.io-141414?logo=temporal&logoColor=ffffff">
             </p>
 
-            <p><strong>Situation:</strong>
+            <p><strong>Situation:</strong></p>
+            <p class="value">
                 The core process for automated storefront creation was initially built on Workato (low-code). As the
                 platform scaled, this approach became a bottleneck due to its limited debugging capabilities, high
                 operational costs, and lack of flexibility for complex business logic.</p>
-            <p><strong>Task:</strong>
+            <p><strong>Task:</strong></p>
+            <p class="value">
                 Replace the Workato-based flow with a custom, high-performance in-house solution capable of handling
                 complex, long-running site-generation workflows with high reliability.</p>
             <p><strong>Action:</strong></p>
-            <ul>
-                <li><strong>Solution Design:</strong>
-                    Selected Temporal.io as the orchestration engine to manage the entire lifecycle of storefront
-                    creation.
-                </li>
-                <li><strong>Engineering:</strong>
-                    Developed durable workflows in TypeScript, replacing opaque low-code logic with maintainable,
-                    versioned, and testable code.
-                </li>
-                <li><strong>Implementation:</strong>
-                    Applied the Saga pattern to handle distributed transactions across multiple services, ensuring
-                    a consistent state even in case of partial failures.
-                </li>
-            </ul>
+            <p class="value"><strong>Solution Design:</strong>
+                Selected Temporal.io as the orchestration engine to manage the entire lifecycle of storefront
+                creation.
+            </p>
+            <p class="value"><strong>Engineering:</strong>
+                Developed durable workflows in TypeScript, replacing opaque low-code logic with maintainable,
+                versioned, and testable code.
+            </p>
+            <p class="value"><strong>Implementation:</strong>
+                Applied the Saga pattern to handle distributed transactions across multiple services, ensuring
+                a consistent state even in case of partial failures.
+            </p>
             <p><strong>Result:</strong></p>
-            <ul>
-                <li><strong>Reliability:</strong>
-                    Achieved 99.9% success rate for automated site creation, with automated retries and clear visibility
-                    into execution states.
-                </li>
-                <li><strong>Efficiency:</strong>
-                    Reduced operational overhead and dependencies on third-party low-code platforms, providing full
-                    control over the execution logic.
-                </li>
-                <li><strong>Observability:</strong>
-                    Dramatically improved debugging speed by leveraging Temporal’s visibility tools, allowing the team
-                    to resolve workflow issues in minutes rather than hours.
-                </li>
-            </ul>
+            <p class="value"><strong>Reliability:</strong>
+                Achieved 99.9% success rate for automated site creation, with automated retries and clear visibility
+                into execution states.
+            </p>
+            <p class="value"><strong>Efficiency:</strong>
+                Reduced operational overhead and dependencies on third-party low-code platforms, providing full
+                control over the execution logic.
+            </p>
+            <p class="value"><strong>Observability:</strong>
+                Dramatically improved debugging speed by leveraging Temporal’s visibility tools, allowing the team
+                to resolve workflow issues in minutes rather than hours.
+            </p>
         </div>
 
         <div class="star">
@@ -391,71 +494,86 @@
                      src="https://img.shields.io/badge/graphql-e10098?logo=graphql&logoColor=ffffff">
             </p>
 
-            <p><strong>Situation:</strong>
+            <p><strong>Situation:</strong></p>
+            <p class="value">
                 The organization utilized a family of corporate products, each with its own siloed authentication logic.
                 This led to a poor user experience, duplicated user data, and significant security risks during account
                 management and offboarding.</p>
-            <p><strong>Task:</strong>
+            <p><strong>Task:</strong></p>
+            <p class="value">
                 Design and implement a centralized Single Sign-On (SSO) service to provide a unified entry point,
                 streamlined user management, and enhanced security across all corporate applications.</p>
             <p><strong>Action:</strong></p>
-            <ul>
-                <li><strong>Security Architecture:</strong>
-                    Developed a robust authentication system based on JWT (JSON Web Tokens) using Node.js and Prisma.
-                    Implemented secure token rotation, blacklisting, and cross-domain session handling.
-                </li>
-                <li><strong>Authorization Logic:</strong>
-                    Built a granular Role-Based Access Control (RBAC) system, allowing administrators to define precise
-                    permissions for different products within a single interface.
-                </li>
-                <li><strong>UI/UX Development:</strong>
-                    Designed and built a modern, intuitive identity portal using Vue 3, covering registration, secure
-                    login flows, and user profile management.
-                </li>
-            </ul>
+            <p class="value"><strong>Security Architecture:</strong>
+                Developed a robust authentication system based on JWT (JSON Web Tokens) using Node.js and Prisma.
+                Implemented secure token rotation, blacklisting, and cross-domain session handling.
+            </p>
+            <p class="value"><strong>Authorization Logic:</strong>
+                Built a granular Role-Based Access Control (RBAC) system, allowing administrators to define precise
+                permissions for different products within a single interface.
+            </p>
+            <p class="value"><strong>UI/UX Development:</strong>
+                Designed and built a modern, intuitive identity portal using Vue 3, covering registration, secure
+                login flows, and user profile management.
+            </p>
             <p><strong>Result:</strong></p>
-            <ul>
-                <li><strong>Unified Experience:</strong>
-                    Enabled seamless navigation between products with a single set of credentials, dramatically
-                    improving internal user satisfaction.
-                </li>
-                <li><strong>Security Compliance:</strong>
-                    Centralized the offboarding process, allowing security teams to revoke access to all corporate tools
-                    instantly from a single point.
-                </li>
-                <li><strong>Integration Readiness:</strong>
-                    Reduced the time required to integrate new internal products into the ecosystem by providing a
-                    standardized authentication API.
-                </li>
-            </ul>
+            <p class="value"><strong>Unified Experience:</strong>
+                Enabled seamless navigation between products with a single set of credentials, dramatically
+                improving internal user satisfaction.
+            </p>
+            <p class="value"><strong>Security Compliance:</strong>
+                Centralized the offboarding process, allowing security teams to revoke access to all corporate tools
+                instantly from a single point.
+            </p>
+            <p class="value"><strong>Integration Readiness:</strong>
+                Reduced the time required to integrate new internal products into the ecosystem by providing a
+                standardized authentication API.
+            </p>
         </div>
     </section>
 
-    <section class="animate delay-4">
+    <section class="animate delay-4 section-expertise">
         <h2>🛠 Technical Expertise</h2>
-        <p><strong>Frontend:</strong>
-            JavaScript (ESNext), TypeScript, Vue 3 (Composition API), React 19, Next.js, Vite, Tailwind CSS, PWA,
-            Web Accessibility (A11y).</p>
-        <p><strong>State Management:</strong> GraphQL (Apollo Federation), TanStack Query, Pinia.</p>
-        <p><strong>Backend:</strong>
-            Node.js, NestJS, Express.js, RESTful APIs, Serverless (AWS Lambda / GCP Functions), Puppeteer (Automation),
-            WebSockets.</p>
-        <p><strong>Databases:</strong> PostgreSQL, MongoDB, Redis, Prisma ORM.</p>
-        <p><strong>Testing & Quality:</strong>
-            Jest, Vitest, Cypress, Playwright, ESLint/Prettier, CI/CD (GitHub Actions).</p>
-        <p><strong>Cloud & DevOps:</strong>
-            Google Cloud Platform (GCP), AWS, Docker, Kubernetes (K8s), Kafka, Monitoring (Prometheus, Grafana).</p>
-        <p><strong>Workflow & Architecture:</strong>
-            Temporal.io (Workflow Orchestration), System Design, Microservices, Agile/Scrum.</p>
-    </section>
+        <dl>
+            <dt>Frontend:</dt>
+            <dd>JavaScript (ESNext), TypeScript, Vue 3 (Composition API), React 19, Next.js, Vite, Tailwind CSS, PWA,
+                Web Accessibility (A11y).
+            </dd>
+        </dl>
 
-    <section class="animate delay-5">
-        <h2>🌐 Links</h2>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/romanrakhman" target="_blank">linkedin.com</a></li>
-            <li><a href="https://www.codewars.com/users/rahmanroman" target="_blank">codewars.com</a></li>
-            <li><a href="https://github.com/rahmanroman" target="_blank">github.com</a></li>
-        </ul>
+        <dl>
+            <dt>State Management:</dt>
+            <dd>GraphQL (Apollo Federation), TanStack Query, Pinia.</dd>
+        </dl>
+
+        <dl>
+            <dt>Backend:</dt>
+            <dd>Node.js, NestJS, Express.js, RESTful APIs, Serverless (AWS Lambda / GCP Functions), Puppeteer
+                (Automation),
+                WebSockets.
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>Databases:</dt>
+            <dd>PostgreSQL, MongoDB, Redis, Prisma ORM.</dd>
+        </dl>
+
+        <dl>
+            <dt>Testing & Quality:</dt>
+            <dd>Jest, Vitest, Cypress, Playwright, ESLint/Prettier, CI/CD (GitHub Actions).</dd>
+        </dl>
+
+        <dl>
+            <dt>Cloud & DevOps:</dt>
+            <dd>Google Cloud Platform (GCP), AWS, Docker, Kubernetes (K8s), Kafka, Monitoring (Prometheus, Grafana).
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>Workflow & Architecture:</dt>
+            <dd>Temporal.io (Workflow Orchestration), System Design, Microservices, Agile/Scrum.</dd>
+        </dl>
     </section>
 </div>
 </body>
