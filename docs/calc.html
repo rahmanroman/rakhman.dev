@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Професионален данъчен калкулатор 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        [v-cloak] { display: none !important; }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .detail-row { display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-bottom: 0.25rem; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen p-4 md:p-8 font-sans text-slate-900">
+
+<div
+        id="app"
+        v-scope="TaxApp()"
+        v-cloak
+        class="max-w-6xl mx-auto"
+>
+    <!-- Заголовок -->
+    <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-black text-slate-800 mb-2">Данъчен калкулатор 2026</h1>
+        <p class="text-slate-500 font-medium">Професионално сравнение според стандартите на KIK-Info</p>
+    </header>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+
+        <!-- Трудов Договор -->
+        <section class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden flex flex-col">
+            <div class="p-6 pb-0">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="p-3 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold">Трудов договор</h2>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Брутно възнаграждение</label>
+                    <div class="relative">
+                        <!-- Увеличен pr-12 для отступа от символа -->
+                        <input type="number" v-model="salary.gross" class="w-full text-3xl font-black p-4 pr-12 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 focus:outline-none transition-all">
+                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 font-bold text-xl">€</span>
+                    </div>
+                </div>
+
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <p class="text-[10px] font-bold text-blue-600 uppercase mb-2 border-b border-blue-50 pb-1">Удръжки за сметка на служителя (13.78%)</p>
+                        <div class="detail-row"><span>Фонд "Пенсии" (ДОО)</span><span>- {{ format(salaryDetails.emp.pension) }} €</span></div>
+                        <div class="detail-row"><span>Фонд "ОЗМ" (Болнични)</span><span>- {{ format(salaryDetails.emp.ozm) }} €</span></div>
+                        <div class="detail-row"><span>Фонд "Безработица"</span><span>- {{ format(salaryDetails.emp.unemp) }} €</span></div>
+                        <div class="detail-row"><span>ДЗПО (за родени след 1959)</span><span>- {{ format(salaryDetails.emp.dzpo) }} €</span></div>
+                        <div class="detail-row"><span>Здравно осигуряване</span><span>- {{ format(salaryDetails.emp.health) }} €</span></div>
+                        <div class="flex justify-between text-sm font-bold text-slate-700 mt-1">
+                            <span>Данък общ доход (10%)</span>
+                            <span class="text-red-500">- {{ format(salaryDetails.incomeTax) }} €</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-2">За сметка на работодателя (~18.92%)</p>
+                        <div class="detail-row"><span>Всички фондове ДОО/ДЗПО/Здравни</span><span>+ {{ format(salaryDetails.boss.totalSocial) }} €</span></div>
+                        <div class="detail-row"><span>Трудова злополука (ср. 0.5%)</span><span>+ {{ format(salaryDetails.boss.accident) }} €</span></div>
+                        <div class="flex justify-between text-xs font-black text-slate-800 mt-2 border-t border-slate-200 pt-2 uppercase">
+                            <span>Общ разход (Total Cost)</span>
+                            <span>{{ format(salaryDetails.totalCost) }} €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-auto py-8 px-6 text-center bg-blue-600">
+                <p class="text-xs text-blue-100 font-bold uppercase tracking-widest mb-1">Чиста сума (Neto)</p>
+                <p class="text-5xl font-black text-white leading-tight">{{ format(salaryDetails.net) }} €</p>
+            </div>
+        </section>
+
+        <!-- ЕООД -->
+        <section class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden flex flex-col">
+            <div class="p-6 pb-0">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="p-3 bg-emerald-600 text-white rounded-2xl shadow-lg shadow-emerald-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold">ЕООД (Бизнес)</h2>
+                </div>
+
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <div class="flex justify-between items-end mb-1">
+                            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Месечен приход (Фактура)</label>
+                            <div class="flex bg-slate-100 p-0.5 rounded-lg text-[9px] font-bold">
+                                <button @click="eood.currency = 'EUR'" :class="eood.currency === 'EUR' ? 'bg-white shadow-sm' : ''" class="px-2 py-0.5 rounded transition-all uppercase">EUR</button>
+                                <button @click="eood.currency = 'USD'" :class="eood.currency === 'USD' ? 'bg-white shadow-sm' : ''" class="px-2 py-0.5 rounded transition-all ml-0.5 uppercase">USD</button>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <!-- Увеличен pr-12 и замена кода валюты на символ -->
+                            <input type="number" v-model="eood.gross" class="w-full text-3xl font-black p-4 pr-12 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-emerald-500 focus:outline-none transition-all">
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 font-bold text-xl">{{ eood.currency === 'EUR' ? '€' : '$' }}</span>
+                        </div>
+                        <!-- Примечание с курсом -->
+                        <p v-if="eood.currency === 'USD'" class="mt-2 text-[11px] text-slate-400 italic">
+                            Курс: 1 USD ≈ {{ usdRate.toFixed(4) }} EUR (Общо: {{ format(eoodGrossInEur) }} €)
+                        </p>
+                    </div>
+
+                    <div>
+                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Фирмени разходи (наем, счетоводител...)</label>
+                        <div class="relative">
+                            <input type="number" v-model="eood.expenses" class="w-full text-lg font-bold p-3 pr-10 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-emerald-500 focus:outline-none transition-all">
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 font-bold">€</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 pt-2">
+                        <p class="text-[10px] font-bold text-emerald-600 uppercase mb-2 border-b border-emerald-50 pb-1">Данъчно облагане</p>
+                        <div class="detail-row">
+                            <span>Лични осигуровки (мин. праг)</span>
+                            <span class="text-red-400">- {{ format(eoodDetails.social) }} €</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Корпоративен данък (10%)</span>
+                            <span class="text-red-400">- {{ format(eoodDetails.corpTax) }} €</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Данък дивидент (5%)</span>
+                            <span class="text-red-400">- {{ format(eoodDetails.divTax) }} €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-auto py-8 px-6 text-center bg-emerald-600">
+                <p class="text-xs text-emerald-100 font-bold uppercase tracking-widest mb-1 text-center">Разполагаема сума (Neto)</p>
+                <p class="text-5xl font-black text-white leading-tight">{{ format(eoodDetails.net) }} €</p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="mt-12 p-8 bg-white rounded-3xl border border-slate-200 text-[11px] text-slate-500 leading-relaxed shadow-sm">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="font-black text-slate-800 uppercase mb-2">Параметри 2026</h4>
+                <ul class="space-y-1">
+                    <li>• Макс. осигурителен доход: 3750 лв (1917.41 €)</li>
+                    <li>• Мин. заплата (прогноза): 933 лв (477.03 €)</li>
+                    <li>• Родени след 1959 г. (ДЗПО активирано)</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-black text-slate-800 uppercase mb-2">Формули ДОО</h4>
+                <p>Изчисленията включват фонд "Пенсии" (6.58%), "ОЗМ" (1.4%), "Безработица" (0.4%) и "ДЗПО" (2.2%) за служителя. Работодателят покрива по-висок % за същите фондове.</p>
+            </div>
+            <div>
+                <h4 class="font-black text-slate-800 uppercase mb-2">Данък дивидент</h4>
+                <p>В модела ЕООД се приема, че цялата печалба след облагане с корпоративен данък се разпределя като дивидент (5%).</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://unpkg.com/petite-vue"></script>
+<script>
+    function TaxApp() {
+        return {
+            salary: { gross: 6000 },
+            eood: { gross: 6500, currency: 'USD', expenses: 150 },
+            usdRate: 0.849372,
+
+            async fetchRate() {
+                try {
+                    const res = await fetch('https://open.er-api.com/v6/latest/USD');
+                    const data = await res.json();
+                    if (data?.rates?.EUR) this.usdRate = data.rates.EUR;
+                } catch (e) { console.warn("Default rate used"); }
+            },
+
+            get eoodGrossInEur() {
+                return this.eood.currency === 'USD' ? (this.eood.gross * this.usdRate) : this.eood.gross;
+            },
+
+            get salaryDetails() {
+                const gross = Number(this.salary.gross) || 0;
+                const maxBase = 1917.41;
+                const base = Math.min(gross, maxBase);
+
+                const emp = {
+                    pension: base * 0.0658,
+                    ozm: base * 0.014,
+                    unemp: base * 0.004,
+                    dzpo: base * 0.022,
+                    health: base * 0.032
+                };
+                const totalEmpSocial = Object.values(emp).reduce((a, b) => a + b, 0);
+                const incomeTax = (gross - totalEmpSocial) * 0.10;
+
+                const boss = {
+                    totalSocial: base * 0.1842,
+                    accident: base * 0.005
+                };
+
+                return {
+                    emp,
+                    incomeTax,
+                    boss,
+                    totalCost: gross + boss.totalSocial + boss.accident,
+                    net: gross - totalEmpSocial - incomeTax
+                };
+            },
+
+            get eoodDetails() {
+                const gross = Number(this.eoodGrossInEur) || 0;
+                const expenses = Number(this.eood.expenses) || 0;
+                const minBase = 477.03;
+
+                const social = minBase * 0.278;
+                const profitBeforeTax = Math.max(0, gross - expenses - social);
+                const corpTax = profitBeforeTax * 0.10;
+                const netProfit = profitBeforeTax - corpTax;
+                const divTax = netProfit * 0.05;
+
+                return { social, corpTax, divTax, net: netProfit - divTax };
+            },
+
+            format(num) {
+                return Number(num).toLocaleString('bg-BG', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            },
+
+            mounted() { this.fetchRate(); }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        PetiteVue.createApp({ TaxApp }).mount('#app');
+    });
+</script>
+</body>
+</html>
