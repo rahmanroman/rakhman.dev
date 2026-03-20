@@ -17,6 +17,7 @@
 <div
         id="app"
         v-scope="TaxApp()"
+        @vue:mounted="fetchRate()"
         v-cloak
         class="max-w-6xl mx-auto"
 >
@@ -43,7 +44,6 @@
                 <div class="mb-6">
                     <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Брутно възнаграждение</label>
                     <div class="relative">
-                        <!-- Увеличен pr-12 для отступа от символа -->
                         <input type="number" v-model="salary.gross" class="w-full text-3xl font-black p-4 pr-12 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 focus:outline-none transition-all">
                         <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 font-bold text-xl">€</span>
                     </div>
@@ -103,11 +103,9 @@
                             </div>
                         </div>
                         <div class="relative">
-                            <!-- Увеличен pr-12 и замена кода валюты на символ -->
                             <input type="number" v-model="eood.gross" class="w-full text-3xl font-black p-4 pr-12 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-emerald-500 focus:outline-none transition-all">
                             <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 font-bold text-xl">{{ eood.currency === 'EUR' ? '€' : '$' }}</span>
                         </div>
-                        <!-- Примечание с курсом -->
                         <p v-if="eood.currency === 'USD'" class="mt-2 text-[11px] text-slate-400 italic">
                             Курс: 1 USD ≈ {{ usdRate.toFixed(4) }} EUR (Общо: {{ format(eoodGrossInEur) }} €)
                         </p>
@@ -174,14 +172,18 @@
         return {
             salary: { gross: 6000 },
             eood: { gross: 6500, currency: 'USD', expenses: 150 },
-            usdRate: 0.849372,
+            usdRate: 0.866447,
 
             async fetchRate() {
                 try {
                     const res = await fetch('https://open.er-api.com/v6/latest/USD');
                     const data = await res.json();
-                    if (data?.rates?.EUR) this.usdRate = data.rates.EUR;
-                } catch (e) { console.warn("Default rate used"); }
+                    if (data?.rates?.EUR) {
+                        this.usdRate = data.rates.EUR;
+                    }
+                } catch (e) {
+                    console.warn("API error, using fallback rate");
+                }
             },
 
             get eoodGrossInEur() {
@@ -233,9 +235,7 @@
 
             format(num) {
                 return Number(num).toLocaleString('bg-BG', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            },
-
-            mounted() { this.fetchRate(); }
+            }
         }
     }
 
